@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- 모바일 화면에 맞게 표시 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>너에게 보내는 편지 💌</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #fff1f5;
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 430px;
+      text-align: center;
+    }
+
+    .envelope {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      border: none;
+      background: #ff8fab;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    .letter {
+      display: none;
+      margin-top: 25px;
+      background: #fffdf8;
+      padding: 28px 22px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: left;
+      line-height: 1.9;
+      color: #555;
+      font-size: 15px;
+      animation: open 0.5s ease;
+    }
+
+    .letter.show {
+      display: block;
+    }
+
+    .date {
+      text-align: right;
+      color: #aaa;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+
+    @keyframes open {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="envelope">💌</div>
+
+    <h1>너에게 보내는 편지</h1>
+    <p class="sub">버튼을 눌러 편지를 열어봐 :)</p>
+
+    <button onclick="openLetter()">
+      편지 열기 💗
+    </button>
+
+    <div class="letter" id="letter">
+
+      <p>
+        안녕! 바보야
+      </p>
+
+      <p>
+        너에게 하고 싶은 말이 있어서<br>
+        이렇게 편지를 써봤어.
+      </p>
+
+      <p>
+        평소에는 쑥스러워서 하지 못했던 말도<br>
+        오늘은 조금 용기 내서 해보려해
+      </p>
+
+      <p>
+        항상 고맙고, 앞으로도 좋은 추억<br>
+        많이 만들어가고 싶어 :)
+      </p>
+
+      <p>
+        읽어줘서 고마워 💗
+      </p>
+
+      <div class="date">
+        2026. 09. 01
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("letter").classList.add("show");
+    }
+  </script>
+
+</body>
+</html>
